@@ -16,6 +16,12 @@ const EnvSchemaValidator = joi.object({
   DB_DATABASE: joi.string().required(),
   DB_LOGGING: joi.boolean().default(false),
   DB_SCHEMA: joi.string().default('public'),
+  // Contentful
+  CONTENTFUL_BASE_URL: joi.string().uri().required(),
+  CONTENTFUL_SPACE_ID: joi.string().required(),
+  CONTENTFUL_ACCESS_TOKEN: joi.string().required(),
+  CONTENTFUL_ENVIRONMENT: joi.string().required(),
+  CONTENTFUL_CONTENT_TYPE: joi.string().required(),
 });
 
 export default EnvSchemaValidator;
