@@ -1,8 +1,6 @@
 import { ConfigModule as NestConfigModule, ConfigService } from '@nestjs/config';
+import { TypeOrmModule } from '@nestjs/typeorm';
 import { Module } from '@nestjs/common';
-
-import { getDataSourceName, TypeOrmModule } from '@nestjs/typeorm';
-import { DataSource } from 'typeorm';
 
 import { DatabaseConfig, DatabaseResolver as db } from '@config/database.config';
 
