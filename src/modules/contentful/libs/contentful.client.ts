@@ -21,16 +21,7 @@ export class ContentfulClient {
   }
 
   async fetchProducts(): Promise<ContentfulProductsResponse> {
-    try {
-      const response = await get<ContentfulProductsResponse>(this.url);
-
-      return response.data;
-    } catch (e) {
-      const error = e as Error;
-
-      console.error('Error fetching products:', error);
-
-      return {} as ContentfulProductsResponse;
-    }
+    const response = await get<ContentfulProductsResponse>(this.url);
+    return response.data;
   }
 }

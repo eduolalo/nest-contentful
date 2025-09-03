@@ -1,4 +1,5 @@
 import { Test, TestingModule } from '@nestjs/testing';
+import { Logger } from '@nestjs/common';
 
 import { ContentfulClient } from '@modules/contentful/libs/contentful.client';
 import { ContentfulProductsResponse } from '@modules/contentful/interfaces';
@@ -14,6 +15,7 @@ describe('FetchProductsService', () => {
     const module: TestingModule = await Test.createTestingModule({
       providers: [
         FetchProductsService,
+        Logger,
         {
           provide: ContentfulClient,
           useValue: {
