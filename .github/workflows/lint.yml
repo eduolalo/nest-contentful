@@ -1,4 +1,4 @@
-name: Lint
+name: Lint and test
 
 on:
   pull_request:
@@ -14,10 +14,13 @@ jobs:
       - uses: actions/checkout@v4
       - uses: oven-sh/setup-bun@v2
         with:
-            bun-version-file: ".bun-version"
+          bun-version-file: '.bun-version'
 
       - name: Install Dependencies
         run: bun install --silent
 
       - name: Lint code
         run: bun lint
+
+      - name: Run tests
+        run: bun test

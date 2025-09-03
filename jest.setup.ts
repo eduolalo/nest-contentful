@@ -12,7 +12,7 @@ env.DB_DATABASE = 'mydatabase';
 env.DB_LOGGING = 'true';
 
 env.CONTENTFUL_BASE_URL = 'https://cdn.contentful.com';
-env.CONTENTFUL_SPACE_ID = '9xs1613l9f7v';
-env.CONTENTFUL_ACCESS_TOKEN = 'I-ThsT55eE_B3sCUWEQyDT4VqVO3x__20ufuie9usns';
+env.CONTENTFUL_SPACE_ID = 'some-space';
+env.CONTENTFUL_ACCESS_TOKEN = 'some-token';
 env.CONTENTFUL_ENVIRONMENT = 'master';
 env.CONTENTFUL_CONTENT_TYPE = 'product';
