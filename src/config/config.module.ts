@@ -14,7 +14,7 @@ import EnvSchemaValidator from './env.schema.validator'
     validationSchema: EnvSchemaValidator,
   }),
   TypeOrmModule.forRootAsync({
-    useFactory: (config: ConfigService) => db(config.get('database.default')),
+    useFactory: (config: ConfigService) => db(config.get('database').default),
     inject: [ConfigService],
   }),
 ],
