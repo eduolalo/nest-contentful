@@ -24,10 +24,6 @@ export class ContentfulClient {
     try {
       const response = await get<ContentfulProductsResponse>(this.url);
 
-      if (response.status !== 200) {
-        throw new Error(`Error: ${response.statusText}, code: ${response.status}`);
-      }
-
       return response.data;
     } catch (e) {
       const error = e as Error;
