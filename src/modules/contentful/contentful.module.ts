@@ -1,8 +1,9 @@
 import { Module } from '@nestjs/common';
+
 import { FetchProductsService } from './use-cases/fetch-products/fetch-products.service';
-import { ContentfulClient } from './contentful.client';
+import { ContentfulClient } from '@modules/contentful/libs';
 
 @Module({
-  providers: [FetchProductsService, ContentfulClient]
+  providers: [FetchProductsService, ContentfulClient],
 })
 export class ContentfulModule {}

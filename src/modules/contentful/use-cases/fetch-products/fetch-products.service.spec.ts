@@ -1,8 +1,8 @@
 import { Test, TestingModule } from '@nestjs/testing';
 
 import { ContentfulClient } from '@modules/contentful/libs/contentful.client';
-import { FetchProductsService } from './fetch-products.service';
 import { ContentfulProductsResponse } from '@modules/contentful/interfaces';
+import { FetchProductsService } from './fetch-products.service';
 
 import { GetProductsMock } from '@mocks/contentful-api';
 
