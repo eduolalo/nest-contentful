@@ -7,9 +7,10 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { ContentfulModule } from './modules/contentful/contentful.module';
 import { ProductsModule } from './modules/products/products.module';
+import { CommonModule } from './modules/common/common.module';
 
 @Module({
-  imports: [ScheduleModule.forRoot(), ConfigModule, ContentfulModule, ProductsModule],
+  imports: [ScheduleModule.forRoot(), ConfigModule, ContentfulModule, ProductsModule, CommonModule],
   controllers: [AppController],
   providers: [AppService],
 })
