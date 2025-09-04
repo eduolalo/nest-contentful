@@ -25,6 +25,7 @@
       "@database/*": ["src/database/*"],
       "@modules/*": ["src/modules/*"],
       "@config/*": ["src/config/*"],
+      "@mocks/*": ["test/__mocks__/*"]
     }
   }
 }

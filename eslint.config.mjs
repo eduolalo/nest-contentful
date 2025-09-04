@@ -6,7 +6,7 @@ import tseslint from 'typescript-eslint';
 
 export default tseslint.config(
   {
-    ignores: ['eslint.config.mjs'],
+    ignores: ['eslint.config.mjs', 'test/*'],
   },
   eslint.configs.recommended,
   ...tseslint.configs.recommendedTypeChecked,
@@ -24,20 +24,18 @@ export default tseslint.config(
       sourceType: 'module',
       parserOptions: {
         project: './tsconfig.json',
+        parser: '@typescript-eslint/parser',
       },
     },
   },
   {
     rules: {
-      '@typescript-eslint/no-return-await': 'error',
       '@typescript-eslint/no-floating-promises': 'off',
       '@typescript-eslint/explicit-function-return-type': 'error',
       '@typescript-eslint/explicit-module-boundary-types': 'off',
       '@typescript-eslint/no-explicit-any': 'error',
-      '@typescript-eslint/no-empty-interface': [
-        'error',
-        { allowSingleExtends: true }
-      ],
+      '@typescript-eslint/no-empty-interface': ['error', { allowSingleExtends: true }],
+      '@typescript-eslint/unbound-method': 'off',
       '@typescript-eslint/naming-convention': [
         'error',
         {

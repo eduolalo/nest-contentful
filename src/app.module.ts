@@ -4,9 +4,11 @@ import { ConfigModule } from './config/config.module';
 
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
+import { ContentfulModule } from './modules/contentful/contentful.module';
+import { ProductsModule } from './modules/products/products.module';
 
 @Module({
-  imports: [ConfigModule],
+  imports: [ConfigModule, ContentfulModule, ProductsModule],
   controllers: [AppController],
   providers: [AppService],
 })
