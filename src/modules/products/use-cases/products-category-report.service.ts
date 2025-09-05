@@ -15,9 +15,9 @@ export class ProductsCategoryReportService {
 
   async runReport(): Promise<ProductsCategoryReportResponseDto> {
     const countQuery = `
-        category,
-        count(*) as products,
-        (COUNT(*) * 100.0) / SUM(COUNT(*)) OVER() AS percentage
+      category,
+      count(*) AS products,
+      (COUNT(*) * 100.0) / SUM(COUNT(*)) OVER() AS percentage
     `;
 
     const result = await this.repository
