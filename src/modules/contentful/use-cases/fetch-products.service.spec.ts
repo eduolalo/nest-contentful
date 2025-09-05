@@ -3,7 +3,7 @@ import { Logger } from '@nestjs/common';
 
 import { ContentfulClient } from '@modules/contentful/libs/contentful.client';
 import { ContentfulProductsResponse } from '@modules/contentful/interfaces';
-import { FetchProductsService } from './fetch-products.service';
+import { FetchProductsService } from './';
 
 import { GetProductsMock } from '@mocks/contentful-api';
 

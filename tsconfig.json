@@ -22,10 +22,12 @@
     "strictBindCallApply": false,
     "noFallthroughCasesInSwitch": false,
     "paths": {
+      "@factories/*": ["src/database/factories/*"],
       "@database/*": ["src/database/*"],
+      "@mocks/*": ["test/__mocks__/*"],
       "@modules/*": ["src/modules/*"],
-      "@config/*": ["src/config/*"],
-      "@mocks/*": ["test/__mocks__/*"]
+      "@common/*": ["src/modules/common/*"],
+      "@config/*": ["src/config/*"]
     }
   }
 }

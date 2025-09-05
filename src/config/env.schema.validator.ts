@@ -22,6 +22,10 @@ const EnvSchemaValidator = joi.object({
   CONTENTFUL_ACCESS_TOKEN: joi.string().required(),
   CONTENTFUL_ENVIRONMENT: joi.string().required(),
   CONTENTFUL_CONTENT_TYPE: joi.string().required(),
+  // Cron
+  CRON_FETCH_PRODUCTS: joi.string().required(),
+  // JWT
+  JWT_SECRET: joi.string().required(),
 });
 
 export default EnvSchemaValidator;

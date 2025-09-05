@@ -13,7 +13,7 @@ import { DecimalTransformer } from '@modules/products/transformers';
 @Entity()
 export class Product {
   @PrimaryGeneratedColumn('uuid')
-  id: string;
+  id?: string;
 
   @Column()
   @Index({ unique: true })
@@ -64,6 +64,9 @@ export class Product {
   @UpdateDateColumn()
   updatedAt: Date;
 
+  @UpdateDateColumn()
+  fetchedAt?: Date;
+
   @DeleteDateColumn({ nullable: true })
-  deletedAt: Date | null;
+  deletedAt?: Date | null;
 }
