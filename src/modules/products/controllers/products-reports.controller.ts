@@ -1,6 +1,8 @@
-import { Controller, Get, Query, ValidationPipe } from '@nestjs/common';
+import { Controller, Get, Query, ValidationPipe, UseGuards } from '@nestjs/common';
 
 import { DeletedProductsReportService, ProductsReportService } from '@modules/products/use-cases';
+
+import { JwtAuthGuard } from '@modules/auth/guards';
 
 import { ProductsPercentageResponseDto, ProductsPercentageDto } from '@modules/products/dto';
 
@@ -11,11 +13,13 @@ export class ProductsReportsController {
     private readonly productsReportService: ProductsReportService,
   ) {}
 
+  @UseGuards(JwtAuthGuard)
   @Get('deleted-percentage')
   async getDeletedProductsReport(): Promise<ProductsPercentageResponseDto> {
     return this.deletedProductsReportService.runReport();
   }
 
+  @UseGuards(JwtAuthGuard)
   @Get('percentage')
   async getProductsReport(
     @Query(new ValidationPipe({ transform: true })) query: ProductsPercentageDto,
