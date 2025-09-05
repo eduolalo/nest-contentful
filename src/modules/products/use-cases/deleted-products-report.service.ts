@@ -2,7 +2,7 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Injectable } from '@nestjs/common';
 import { Repository } from 'typeorm';
 
-import { DeletedProductsPercentageDto } from '@modules/products/dto';
+import { ProductsPercentageResponseDto } from '@modules/products/dto';
 
 import { Product } from '@modules/products/entities';
 
@@ -13,7 +13,7 @@ export class DeletedProductsReportService {
     private readonly productRepository: Repository<Product>,
   ) {}
 
-  async runReport(): Promise<DeletedProductsPercentageDto> {
+  async runReport(): Promise<ProductsPercentageResponseDto> {
     const percentageQuery = `
       (
         COUNT(
