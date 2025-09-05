@@ -3,7 +3,7 @@ RUN apk add --no-cache musl-dev
 WORKDIR /var/www/app
 COPY package*.json ./
 RUN npm install -g @nestjs/cli
-RUN npm install ci
+RUN npm ci
 COPY . ./
 
 
