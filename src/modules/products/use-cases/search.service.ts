@@ -15,7 +15,7 @@ export class SearchService {
     private readonly productRepository: Repository<Product>,
   ) {}
 
-  async exec({ page, itemsPerPage, ...filters }: ListProductsDto): Promise<ProductsPage> {
+  async run({ page, itemsPerPage, ...filters }: ListProductsDto): Promise<ProductsPage> {
     const options: IPaginationOptions = {
       page,
       limit: itemsPerPage,
