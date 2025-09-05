@@ -1,0 +1,47 @@
+version: '3.8'
+
+networks:
+  internal:
+    driver: bridge
+
+services:
+  app:
+    build:
+      context: .
+      target: production
+    networks:
+      - internal
+    ports:
+      - '${APP_PORT:-3000}:${APP_PORT:-3000}'
+    depends_on:
+      db:
+        condition: service_healthy
+    volumes:
+      - .:/var/www/app
+      - /var/www/app/node_modules
+    entrypoint: ['./start.sh']
+    env_file:
+      - .env
+    environment:
+      - DB_HOST=db
+      - DB_PORT=5432
+    restart: always
+
+  db:
+    image: postgres:17.6-alpine3.22
+    restart: always
+    networks:
+      - internal
+    ports:
+      - '${DB_PORT:-5432}:${DB_PORT:-5432}'
+    env_file:
+      - .env
+    environment:
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_USER: ${DB_USERNAME}
+      POSTGRES_DB: ${DB_DATABASE}
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U ${DB_USERNAME} -d ${DB_DATABASE}']
+      interval: 5s
+      timeout: 5s
+      retries: 5
