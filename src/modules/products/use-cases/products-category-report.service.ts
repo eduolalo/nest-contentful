@@ -30,7 +30,7 @@ export class ProductsCategoryReportService {
     const categories = result.map((item) => ({
       category: item.category,
       products: Number(item.products) || 0,
-      percentage: Number(Number(item.percentage).toFixed(2)) || 0,
+      percentage: Number(item.percentage) || 0,
     }));
 
     return { categories };

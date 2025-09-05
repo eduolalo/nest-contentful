@@ -116,9 +116,9 @@ describe('ProductsCategoryReportService', () => {
 
       const expectedResult: ProductsCategoryReportResponseDto = {
         categories: [
-          { category: 'Electronics', products: 7, percentage: 33.33 },
-          { category: 'Clothing', products: 8, percentage: 38.1 },
-          { category: 'Books', products: 6, percentage: 28.57 },
+          { category: 'Electronics', products: 7, percentage: 33.333333 },
+          { category: 'Clothing', products: 8, percentage: 38.095238 },
+          { category: 'Books', products: 6, percentage: 28.571429 },
         ],
       };
 
