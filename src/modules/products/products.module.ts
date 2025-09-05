@@ -8,10 +8,13 @@ import { Product } from './entities';
 import { ContentfulModule } from '@modules/contentful/contentful.module';
 import { SearchService } from './use-cases/search.service';
 import { DeleteService } from './use-cases/delete.service';
+import { ProductsReportsController } from './controllers/products-reports.controller';
+import { DeletedProductsReportService } from './use-cases/deleted-products-report.service';
+import { ProductsReportService } from './use-cases/products-report.service';
 
 @Module({
   imports: [TypeOrmModule.forFeature([Product]), ContentfulModule],
-  providers: [FetchAndStoreService, Logger, SearchService, DeleteService],
-  controllers: [ProductsController],
+  providers: [FetchAndStoreService, Logger, SearchService, DeleteService, DeletedProductsReportService, ProductsReportService],
+  controllers: [ProductsController, ProductsReportsController],
 })
 export class ProductsModule {}
