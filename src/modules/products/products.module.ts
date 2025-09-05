@@ -11,10 +11,11 @@ import { DeleteService } from './use-cases/delete.service';
 import { ProductsReportsController } from './controllers/products-reports.controller';
 import { DeletedProductsReportService } from './use-cases/deleted-products-report.service';
 import { ProductsReportService } from './use-cases/products-report.service';
+import { ProductsCategoryReportService } from './use-cases/products-category-report.service';
 
 @Module({
   imports: [TypeOrmModule.forFeature([Product]), ContentfulModule],
-  providers: [FetchAndStoreService, Logger, SearchService, DeleteService, DeletedProductsReportService, ProductsReportService],
+  providers: [FetchAndStoreService, Logger, SearchService, DeleteService, DeletedProductsReportService, ProductsReportService, ProductsCategoryReportService],
   controllers: [ProductsController, ProductsReportsController],
 })
 export class ProductsModule {}
