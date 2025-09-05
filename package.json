@@ -1,6 +1,6 @@
 {
   "name": "nest-contentful",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Contentful product data fetcher",
   "author": "Eduardo Rodriguez <rcchristiane@gmail.com>",
   "private": true,
